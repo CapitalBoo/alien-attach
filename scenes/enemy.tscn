@@ -12,6 +12,8 @@ radius = 16.0
 height = 80.0
 
 [node name="Enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_vrffg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
