@@ -33,3 +33,5 @@ shape = SubResource("CapsuleShape2D_lxfg4")
 
 [node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(35, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

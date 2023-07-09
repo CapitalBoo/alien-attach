@@ -1,5 +1,7 @@
 extends Area2D
 
+signal enemy_contact
+
 @export var rocket_speed = 300
 @onready var visible_container = $VisibleNotifier
 
@@ -15,3 +17,4 @@ func _on_screen_exited():
 func _on_area_entered(area):
 	queue_free()
 	area.die()
+	emit_signal("enemy_contact")
