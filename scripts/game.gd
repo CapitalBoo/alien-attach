@@ -7,6 +7,10 @@ var enemies_spawned = 0
 var enemies_killed = 0
 
 @onready var player = $Player
+@onready var hud = $UI/HUD
+
+func _ready():
+	hud.set_score_label(score)
 
 func _on_deathzone_area_entered(area):
 	area.die()
@@ -33,5 +37,6 @@ func _on_enemy_died():
 	enemies_killed += 1
 	print("enemies_killed: ",enemies_killed)
 	score += 100
+	hud.set_score_label(score)
 	print("Score: " + str(score))
 	
