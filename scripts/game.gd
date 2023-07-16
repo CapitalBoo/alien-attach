@@ -54,3 +54,9 @@ func _on_enemy_died():
 	hud.set_score_label(score)
 	print("enemies_killed: ",enemies_killed) # TODO: Cleanup print debug output!
 	print("Score: " + str(score)) # TODO: Cleanup print debug output!
+
+
+func _on_enemy_spawner_path_enemy_spawned(path_enemy_instance):
+	add_child(path_enemy_instance)
+	enemies_spawned += 1
+	path_enemy_instance.enemy.connect("enemy_died", _on_enemy_died)
