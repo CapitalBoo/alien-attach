@@ -29,6 +29,7 @@ position = Vector2(1350, 675)
 autostart = true
 
 [node name="PathEnemyTimer" type="Timer" parent="."]
+wait_time = 3.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
